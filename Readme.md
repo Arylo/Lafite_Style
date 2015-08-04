@@ -1,3 +1,3 @@
-Lafite Ö÷Ìâ¿â
-===
+# Lafite Style
+
 Demo: NO_LINK

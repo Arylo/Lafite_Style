@@ -1,4 +1,13 @@
+# Modules Folder
+node_modules/
+
 # Cache Folder
-build/
-public/
-live/
+.DS_Store
+*.db
+.sublime*
+
+# Log Folder
+log/
+
+# Generate Folder
+dest/
