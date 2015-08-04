@@ -1,0 +1,33 @@
+@import 'base.styl'
+
+.container
+	position relative
+	margin-left auto
+	margin-right auto
+	padding-left 0
+	padding-right 0
+	width 100%
+	max-width mw-xs
+	.full
+		margin-left 0
+		margin-right 0
+		max-width 100%
+
+$container-base
+	padding-left container-pl
+	padding-right container-pr
+
+@media (min-width mw-lg)
+	.container
+		@extend $container-base
+		max-width mw-lg - container-pl - container-pr
+		
+@media (min-width mw-md)
+	.container
+		@extend $container-base
+		max-width mw-md - container-pl - container-pr
+
+@media (min-width mw-sm)
+	.container
+		@extend $container-base
+		max-width mw-sm - container-pl - container-pr

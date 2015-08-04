@@ -3,6 +3,7 @@
 var fs = require('fs');
 
 var gulp = require('gulp');
+var connect = require('gulp-connect');
 var clean = require('gulp-clean');
 var notify = require('gulp-notify');
 var rename = require('gulp-rename');
@@ -17,6 +18,12 @@ var targetPath = 'dest/';
 
 gulp.task('default', ['build', 'lint'], function() {
     return notify('Deploy Success');
+});
+
+gulp.task('web', ['build'], function() {
+    return connect.server({
+        'port': 8000
+    });
 });
 
 gulp.task('clean', function() {

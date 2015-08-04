@@ -1,0 +1,53 @@
+@import 'base.styl'
+@import 'factory.styl'
+
+// Row
+$row-box
+	box-sizing border-box
+	
+.row
+	margin-left row-ml
+	margin-right row-mr
+	@extend $row-box
+	> *
+		@extend $row-box
+	&:before
+	&:after
+		display table
+		content ' '
+	&:after
+		clear both
+
+// Col
+$col-base
+	position relative
+	padding-left col-pl
+	padding-right col-pr
+	min-height 1px
+		
+$col-base-xs
+	float left
+	
+for num in col-arr
+	xs-width(num)
+		
+@media (max-width mw-sm)
+	$col-base-sm
+		float left
+		
+	for num in col-arr
+		sm-width(num)
+
+@media (min-width mw-md)
+	$col-base-md
+		float left
+		
+	for num in col-arr
+		md-width(num)
+	
+@media (min-width mw-lg)
+	$col-base-lg
+		float left
+		
+	for num in col-arr
+		lg-width(num)

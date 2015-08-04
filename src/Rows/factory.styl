@@ -1,0 +1,19 @@
+@import 'base.styl'
+
+mode-width(mode, index)
+	.{mode}-{index}
+		width (100 * index / col-max) %
+		@extend $col-base
+		@extend $col-base-{mode}
+
+lg-width(index)
+	mode-width('lg', index)
+		
+md-width(index)
+	mode-width('md', index)
+		
+sm-width(index)
+	mode-width('sm', index)
+		
+xs-width(index)
+	mode-width('xs', index)
