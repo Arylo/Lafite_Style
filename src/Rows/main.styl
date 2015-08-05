@@ -24,6 +24,7 @@ $col-base
 	padding-left col-pl
 	padding-right col-pr
 	min-height 1px
+	width 100%
 		
 $col-base-xs
 	float left
@@ -31,7 +32,7 @@ $col-base-xs
 for num in col-arr
 	xs-width(num)
 		
-@media (max-width mw-sm)
+@media (min-width mw-sm)
 	$col-base-sm
 		float left
 		
