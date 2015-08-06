@@ -1,4 +1,5 @@
 @import 'base.styl'
+@import 'factory.styl'
 
 .container
 	position relative
@@ -17,17 +18,49 @@ container-base()
 	padding-left container-pl
 	padding-right container-pr
 
-@media (min-width mw-lg)
+hide-factory()
+
+show-factory()
+
+.hide
+.hidden
+	display none !important
+
+.show
+	display block !important
+	table&
+		display table !important
+	tr&
+		display table-row !important
+	th&
+	td&
+		display table-cell !important
+
+@media (min-width mw-lg) and (max-width mw-md)
 	.container
 		container-base()
 		max-width mw-lg - container-pl - container-pr
-		
-@media (min-width mw-md)
+	
+	hide-factory('lg')
+	show-factory('lg')
+	
+@media (min-width mw-md) and (max-width mw-sm)
 	.container
 		container-base()
 		max-width mw-md - container-pl - container-pr
-
-@media (min-width mw-sm)
+	
+	hide-factory('md')
+	show-factory('md')
+	
+@media (min-width mw-sm) and (max-width mw-xs)
 	.container
 		container-base()
 		max-width mw-sm - container-pl - container-pr
+	
+	hide-factory('sm')
+	show-factory('sm')
+
+@media (min-width mw-xs)
+	hide-factory('xs')
+	show-factory('xs')
+	

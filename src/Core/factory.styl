@@ -1,0 +1,27 @@
+@import 'base.styl'
+
+hide-factory(screenMode = false)
+	.hide
+	.hidden
+		display none !important
+
+show-base()
+	display block !important
+	table&
+		display table !important
+	tr&
+		display table-row !important
+	th&
+	td&
+		display table-cell !important
+
+show-factory(screenMode = false)
+	if screenMode
+		.show-{screenMode}
+			show-base()
+		for item in block inline inline-block
+			.show-{screenMode}-{item}
+				display item !important
+	else
+		.show
+			show-base()
