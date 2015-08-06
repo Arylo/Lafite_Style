@@ -32,21 +32,21 @@ $col-base-xs
 for num in col-arr
 	xs-width(num)
 	
-@media (min-width mw-lg) and (max-width mw-md)
+@media (min-width mw-lg)
 	$col-base-lg
 		float left
 		
 	for num in col-arr
 		lg-width(num)
 
-@media (min-width mw-md) and (max-width mw-sm)
+@media (min-width mw-md) and (max-width mw-lg)
 	$col-base-md
 		float left
 		
 	for num in col-arr
 		md-width(num)
 		
-@media (min-width mw-sm) and (max-width mw-xs)
+@media (min-width mw-sm) and (max-width mw-md)
 	$col-base-sm
 		float left
 		

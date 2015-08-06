@@ -1,0 +1,37 @@
+@import 'base.styl'
+
+.btn
+	margin-bottom btn-margin-bottom
+	margin-top btn-margin-top
+	padding-bottom btn-padding-bottom
+	padding-top btn-padding-top
+	height 100%
+	width 100%
+	max-height btn-height 
+	max-width btn-width 
+	background btn-bg
+	border btn-border
+	color btn-color-font
+	cursor pointer
+	font-family btn-font-family
+	font-size btn-font-size
+	text-align center
+	&.big
+		max-height btn-height-big
+		max-width btn-width-big
+	&.full
+		max-height btn-height-big
+		max-width 100%
+	&.disabled
+	&[disabled]
+		color btn-color-font-disabled
+		cursor auto
+		&:hover
+			border btn-border
+	&.locked
+		border btn-border
+		cursor auto
+		&:hover
+			border btn-border
+	&:hover
+		border btn-border-hover

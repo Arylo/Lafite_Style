@@ -36,7 +36,7 @@ show-factory()
 	td&
 		display table-cell !important
 
-@media (min-width mw-lg) and (max-width mw-md)
+@media (min-width mw-lg)
 	.container
 		container-base()
 		max-width mw-lg - container-pl - container-pr
@@ -44,7 +44,7 @@ show-factory()
 	hide-factory('lg')
 	show-factory('lg')
 	
-@media (min-width mw-md) and (max-width mw-sm)
+@media (min-width mw-md) and (max-width mw-lg)
 	.container
 		container-base()
 		max-width mw-md - container-pl - container-pr
@@ -52,7 +52,7 @@ show-factory()
 	hide-factory('md')
 	show-factory('md')
 	
-@media (min-width mw-sm) and (max-width mw-xs)
+@media (min-width mw-sm) and (max-width mw-md)
 	.container
 		container-base()
 		max-width mw-sm - container-pl - container-pr
@@ -60,7 +60,7 @@ show-factory()
 	hide-factory('sm')
 	show-factory('sm')
 
-@media (min-width mw-xs)
+@media (min-width mw-xs) and (max-width mw-sm)
 	hide-factory('xs')
 	show-factory('xs')
 	
