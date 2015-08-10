@@ -1,0 +1,64 @@
+@import 'base.styl'
+
+.input-group
+	margin-top 25px
+	padding-left 10px
+	height 100%
+	width 100%
+	max-height input-height
+	max-width input-width
+	background-color input-bg
+	border input-border
+	overflow hidden
+	label
+		margin-bottom label-margin-bottom
+		margin-top label-margin-top
+		color label-color
+		font-family label-font-family
+		font-size label-font-size
+		float left
+		&.suffix
+			margin-left label-suffix-margin-left
+			margin-right label-suffix-margin-right
+			float right
+			& + input
+				margin-left label-suffix-margin-left
+
+	input[type='text']
+	input[type='password']
+		margin-right content-margin-right
+		padding-bottom content-padding-bottom
+		padding-left content-padding-left
+		padding-right content-padding-right
+		padding-top content-padding-top
+		max-height content-height
+		max-width content-width
+		border-width 0
+		float right
+		font-size font-size
+		outline none
+	&.big
+		padding-left input-big-padding-left
+		max-height input-big-height
+		max-width input-big-width
+		input
+			padding-bottom content-big-padding-bottom
+			padding-top content-big-padding-top
+			height content-big-height
+			width content-big-width
+		label
+			font-size label-big-font-size
+	&.full
+		max-width 100%
+	&.warning
+		border input-warning-border
+		label
+		input[type='text']
+		input[type='password']
+			color input-warning-color
+	&:hover
+		border input-hover-border
+		label
+		input[type='text']
+		input[type='password']
+			color input-active-color
