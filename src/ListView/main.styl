@@ -1,0 +1,40 @@
+@import 'base.styl'
+
+ul.listview
+	margin-bottom 40px
+	margin-top 40px
+	& > li.item
+		margin-top 40px
+		max-height item-height
+		max-width item-width
+		height 100%
+		width 100%
+		padding 10px 10px
+		border item-border
+		color #5c5b5b
+		cursor pointer
+		&.big
+			max-height item-big-height
+			max-width item-big-width
+		&.full
+			max-width 100%
+		&.left-text
+			text-align left
+		&.center-text
+			text-align center
+		&.right-text
+			text-align right
+		&.active
+		&:hover
+			border item-hover-border
+			color color-active
+	&.big > li.item
+		max-height item-big-height
+		max-width item-big-width
+	&.full > li.item
+		max-width 100%
+
+@media (min-width mw-xs) and (max-width mw-sm)
+	ul.listview.big > li.item
+	ul.listview > li.item.big
+		max-width 100%
