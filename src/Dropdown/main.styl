@@ -1,0 +1,64 @@
+@import 'base.styl'
+
+.input-group.dropdown
+	position relative
+	label.suffix
+	label.arrow
+		position relative
+		margin-right 20px
+		&:after
+		&:before
+			position absolute
+			right -12px
+			top 5px
+			height 0
+			width 0
+			border arrow-border-width arrow-border-style transparent
+			border-left arrow-border
+			content ' '
+			cursor pointer
+		&:before	
+			border-left-color #d5d5d5
+	ul.dropdown-list
+		position absolute
+		left default-width
+		top 0 - list-border-width
+		max-height list-height
+		width list-width
+		background-color #fff
+		border list-border
+		display none
+		overflow auto
+		> li
+			padding 5px 15px
+			text-align left
+			cursor pointer
+			&.active
+			&:hover
+				background color-active
+				color #fff
+	&.big
+		ul.dropdown-list
+			left input-big-width
+	&.full
+		ul.dropdown-list
+			left 0 - list-border-width
+			top input-height
+			max-width 100%
+			width 100%
+		&.big ul.dropdown-list
+			top input-big-height - 10px
+	&.no-hover.open
+	&:not(.no-hover):hover
+		height input-height
+		overflow visible
+		z-index 999
+		ul.dropdown-list
+			display block
+		input[type="text"]
+		input[type="password"]
+			padding-bottom 0
+			padding-top 0
+	&.big.no-hover.open
+	&.big:not(.no-hover):hover
+		height input-big-height - 10px		

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lafite Theme</title>
+	<link rel="stylesheet" href="../../dest/lafite.css">
+</head>
+<body ng-app>
+	<div class="container">
+		<h2>.input-group.dropdown</h2>
+		<div class="input-group dropdown">
+			<label class="arrow"></label>
+			<label>Key</label>
+			<input type="text" value="Value" readonly="true">
+			<ul class="dropdown-list">
+				<li>item01</li>
+				<li class="active">item02</li>
+				<li>item03</li>
+				<li>item04</li>
+				<li>item05</li>
+			</ul>
+		</div>
+		<div class="input-group dropdown">
+			<label class="arrow"></label>
+			<label>Key</label>
+			<input type="text" value="Value" readonly="true">
+			<ul class="dropdown-list">
+				<li>item01</li>
+				<li>item02</li>
+				<li>item03</li>
+				<li>item04</li>
+				<li>item05</li>
+				<li>item06</li>
+				<li>item07</li>
+				<li>item08</li>
+				<li>item09</li>
+				<li>item10</li>
+				<li>item11</li>
+				<li>item12</li>
+				<li>item13</li>
+				<li>item14</li>
+				<li>item15</li>
+				<li>item16</li>
+				<li>item17</li>
+				<li>item18</li>
+				<li>item19</li>
+				<li>item20</li>
+			</ul>
+		</div>
+		<h2>.input-group.dropdown.no-hover</h2>
+		<div class="input-group dropdown no-hover"
+			ng-init="dropdownLock=false" ng-click="dropdownLock=!dropdownLock"
+			ng-class="{'open': dropdownLock}"
+			ng-mouseleave="dropdownLock=false">
+			<label class="arrow"></label>
+			<label>Key</label>
+			<input type="text" value="Value" readonly="true">
+			<ul class="dropdown-list">
+				<li>item01</li>
+				<li class="active">item02</li>
+				<li>item03</li>
+				<li>item04</li>
+				<li>item05</li>
+			</ul>
+		</div>
+		<h2>.input-group.dropdown.big</h2>
+		<div class="input-group dropdown big">
+			<label class="arrow"></label>
+			<label>Key</label>
+			<input type="text" value="Value" readonly="true">
+			<ul class="dropdown-list">
+				<li>item01</li>
+				<li class="active">item02</li>
+				<li>item03</li>
+				<li>item04</li>
+				<li>item05</li>
+			</ul>
+		</div>
+		<h2>.input-group.dropdown.full</h2>
+		<div class="input-group dropdown full">
+			<label class="arrow"></label>
+			<label>Key</label>
+			<input type="text" value="Value" readonly="true">
+			<ul class="dropdown-list">
+				<li>item01</li>
+				<li class="active">item02</li>
+				<li>item03</li>
+				<li>item04</li>
+				<li>item05</li>
+			</ul>
+		</div>
+		<h2>.input-group.dropdown.big.full</h2>
+		<div class="input-group dropdown big full">
+			<label class="arrow"></label>
+			<label>Key</label>
+			<input type="text" value="Value" readonly="true">
+			<ul class="dropdown-list">
+				<li>item01</li>
+				<li class="active">item02</li>
+				<li>item03</li>
+				<li>item04</li>
+				<li>item05</li>
+			</ul>
+		</div>
+	</div>
+	<script src="../../bower_components/angular/angular.min.js"></script>
+</body>
+</html>

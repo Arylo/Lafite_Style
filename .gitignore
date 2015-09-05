@@ -1,5 +1,6 @@
 # Modules Folder
 node_modules/
+bower_components/
 
 # Cache Folder
 .DS_Store
