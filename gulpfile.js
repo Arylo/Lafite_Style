@@ -58,7 +58,9 @@ gulp.task('build:style', function() {
 gulp.task('live', ['build'], function () {
     $.watch(sourcePath + '{**,}*.{css,styl}', function () {
         gulp.start('build:style')
-            .pipe(browserSync.reload);
+            .on('end', function () {
+                gulp.pipe(browserSync.reload);
+            });
     });
     $.watch(sourcePath + '{**,}*.{htm,html}', function () {
         gulp.pipe(browserSync.reload);
