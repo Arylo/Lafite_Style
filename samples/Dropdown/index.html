@@ -8,7 +8,6 @@
 	<div class="container">
 		<h2>.input-group.dropdown</h2>
 		<div class="input-group dropdown">
-			<label class="arrow"></label>
 			<label>Key</label>
 			<input type="text" value="Value" readonly="true">
 			<ul class="dropdown-list">
@@ -18,9 +17,9 @@
 				<li>item04</li>
 				<li>item05</li>
 			</ul>
+			<label class="arrow-right"></label>
 		</div>
 		<div class="input-group dropdown">
-			<label class="arrow"></label>
 			<label>Key</label>
 			<input type="text" value="Value" readonly="true">
 			<ul class="dropdown-list">
@@ -45,13 +44,13 @@
 				<li>item19</li>
 				<li>item20</li>
 			</ul>
+			<label class="arrow-right"></label>
 		</div>
 		<h2>.input-group.dropdown.no-hover</h2>
 		<div class="input-group dropdown no-hover"
 			ng-init="dropdownLock=false" ng-click="dropdownLock=!dropdownLock"
 			ng-class="{'open': dropdownLock}"
 			ng-mouseleave="dropdownLock=false">
-			<label class="arrow"></label>
 			<label>Key</label>
 			<input type="text" value="Value" readonly="true">
 			<ul class="dropdown-list">
@@ -61,10 +60,10 @@
 				<li>item04</li>
 				<li>item05</li>
 			</ul>
+			<label class="arrow-right"></label>
 		</div>
 		<h2>.input-group.dropdown.big</h2>
 		<div class="input-group dropdown big">
-			<label class="arrow"></label>
 			<label>Key</label>
 			<input type="text" value="Value" readonly="true">
 			<ul class="dropdown-list">
@@ -74,10 +73,13 @@
 				<li>item04</li>
 				<li>item05</li>
 			</ul>
+			<label class="arrow-right"></label>
 		</div>
 		<h2>.input-group.dropdown.full</h2>
-		<div class="input-group dropdown full">
-			<label class="arrow"></label>
+		<div class="input-group dropdown full"
+			ng-init="dropdownFullHover=false"
+			ng-mouseover="dropdownFullHover=true"
+			ng-mouseleave="dropdownFullHover=false">
 			<label>Key</label>
 			<input type="text" value="Value" readonly="true">
 			<ul class="dropdown-list">
@@ -87,10 +89,14 @@
 				<li>item04</li>
 				<li>item05</li>
 			</ul>
+			<label class="arrow"
+				ng-class="{'right': !dropdownFullHover, 'down': dropdownFullHover}"></label>
 		</div>
 		<h2>.input-group.dropdown.big.full</h2>
-		<div class="input-group dropdown big full">
-			<label class="arrow"></label>
+		<div class="input-group dropdown big full"
+			ng-init="dropdownBigFullHover=false"
+			ng-mouseover="dropdownBigFullHover=true"
+			ng-mouseleave="dropdownBigFullHover=false">
 			<label>Key</label>
 			<input type="text" value="Value" readonly="true">
 			<ul class="dropdown-list">
@@ -100,6 +106,8 @@
 				<li>item04</li>
 				<li>item05</li>
 			</ul>
+			<label class="arrow"
+				ng-class="{'right': !dropdownBigFullHover, 'down': dropdownBigFullHover}"></label>
 		</div>
 	</div>
 	<script src="../../bower_components/angular/angular.min.js"></script>

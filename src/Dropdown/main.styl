@@ -1,24 +1,73 @@
 @import 'base.styl'
 
+reDirect(direct)
+	if direct == down
+		return top
+	if direct == up
+		return bottom
+	if direct == left
+		return right
+	else
+		return left
+
+$arrow-base
+	position absolute
+	right 5px
+	top 13px
+	height 0
+	width 0
+	border arrow-border-width arrow-border-style transparent
+	content ' '
+	cursor pointer
+
+$t15
+	top 15px
+
 .input-group.dropdown
 	position relative
-	label.suffix
+
+// Arrow System
+.dropdown
+	for item in (suffix arrow arrow-left arrow-right arrow-up arrow-down)
+		label.{item}
+			&:after
+			&:before
+				@extend $arrow-base
 	label.arrow
-		position relative
-		margin-right 20px
-		&:after
-		&:before
-			position absolute
-			right -12px
-			top 5px
-			height 0
-			width 0
-			border arrow-border-width arrow-border-style transparent
-			border-left arrow-border
-			content ' '
-			cursor pointer
-		&:before	
-			border-left-color #d5d5d5
+		for item in (up down left right)
+			&.{item}
+				_item = reDirect(item)
+				&:after
+				&:before
+					border-{_item} arrow-border
+				&:before
+					border-{_item}-color #d5d5d5
+	for item in (up down left right)
+		label.arrow-{item}
+			@extend .dropdown label.arrow.{item}
+	label.suffix
+		@extend .dropdown label.arrow.left
+	&.big
+		for item in (suffix arrow arrow-left arrow-right arrow-up arrow-down)
+			label.{item}
+				&:after
+				&:before
+					@extend $t15
+	&:hover
+		for item in (up down left right)
+			label.arrow.{item}
+				&:after
+				&:before
+					_item = reDirect(item)
+					border-{_item}-color color-active
+		label.suffix
+			@extend .dropdown:hover label.arrow.left
+		for item in (up down left right)
+			label.arrow-{item}
+				@extend .dropdown:hover label.arrow.{item}
+					
+// ListView
+.dropdown
 	ul.dropdown-list
 		position absolute
 		left default-width
@@ -61,4 +110,5 @@
 			padding-top 0
 	&.big.no-hover.open
 	&.big:not(.no-hover):hover
-		height input-big-height - 10px		
+		height input-big-height - 10px
+		
