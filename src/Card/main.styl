@@ -1,0 +1,86 @@
+@import 'base.styl'
+
+.card
+	position relative
+	margin-top 25px
+	padding 20px 25px
+	min-height card-height
+	max-width card-width - (25px - container-pl) - (25px - container-pr)
+	width 100%
+	background-color card-bg
+	border card-border
+	label.flag
+		position absolute
+		top 0 - (flag-height / 2)
+		right 0 - (flag-width / 2)
+		min-height flag-height
+		min-width flag-width
+		background-color flag-bg
+		border flag-border
+		border-radius 10px
+		text-align center
+	&.big
+		min-height card-big-height
+		max-width card-big-width
+	&.full
+		max-width 100%
+		label.flag
+			margin-right 0 - flag-width
+			right 50%
+	&.success
+		border-color card-success-color
+		label.flag
+			border-color flag-success-color
+	&.info	
+		border-color card-info-color
+		label.flag
+			border-color flag-info-color
+	&.warning
+		border-color card-warning-color
+		label.flag
+			border-color flag-warning-color
+	&.error
+		border-color card-error-color
+		label.flag
+			border-color flag-error-color
+	.container > &
+		margin-left 0 - container-pl
+		margin-right 0 - container-pr
+		
+.card
+	.header
+		margin-bottom 10px
+		margin-top -20px
+		padding-top 30px
+		font-size font-size
+		label, a
+			font-size @font-size
+	.content
+		margin-bottom 10px
+		margin-top 10px
+		font-size font-size - 2px
+		label, a
+			font-size @font-size
+	.footer
+		margin-bottom -20px
+		margin-top 15px
+		padding-bottom 20px
+		font-size font-size
+		label, a
+			font-size @font-size
+		.btn:only-child
+			margin-left auto
+			margin-right auto
+
+
+@media (min-width mw-xs) and (max-width mw-sm)
+	
+	.card
+		.container > &
+			margin-left 0
+			margin-right 0
+			max-width card-width - (25px * 2)
+		&.full label.flag
+			margin-right 0
+			right 0 - (flag-width / 2)
+		
