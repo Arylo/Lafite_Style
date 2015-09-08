@@ -12,16 +12,14 @@ reDirect(direct)
 
 $arrow-base
 	position absolute
-	right 5px
-	top 13px
 	height 0
 	width 0
+	right arrow-site-right
+	top arrow-site-top
 	border arrow-border-width arrow-border-style transparent
 	content ' '
 	cursor pointer
 
-$t15
-	top 15px
 
 .input-group.dropdown
 	position relative
@@ -42,17 +40,38 @@ $t15
 					border-{_item} arrow-border
 				&:before
 					border-{_item}-color #d5d5d5
+		&.up
+			&:after
+			&:before
+				top arrow-site-top - (arrow-border-width / 2)
+		&.down
+			&:after
+			&:before
+				top arrow-site-top + (arrow-border-width / 2)
+		&.left
+			&:after
+			&:before
+				right arrow-site-right + (arrow-border-width / 2)
+		&.right
+			&:after
+			&:before
+				right arrow-site-right - (arrow-border-width / 2)
+	
+	// Extend Class
 	for item in (up down left right)
 		label.arrow-{item}
 			@extend .dropdown label.arrow.{item}
 	label.suffix
 		@extend .dropdown label.arrow.left
 	&.big
-		for item in (suffix arrow arrow-left arrow-right arrow-up arrow-down)
-			label.{item}
-				&:after
-				&:before
-					@extend $t15
+		label.suffix
+		label.arrow-right
+		label.arrow-left
+		label.arrow-up
+		label.arrow-down
+			&:after
+			&:before
+				top 15px
 	&:hover
 		for item in (up down left right)
 			label.arrow.{item}
